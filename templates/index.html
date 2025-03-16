@@ -7,5 +7,19 @@
 </head>
 <body>
     <h1>Hello this is out Auth System by using library djaango all auth</h1>
+    
+    <h1>
+    {% if request.user.is_anonymous %}
+    Not Login
+
+    {% else %}
+    Hii, You are Logged in.
+    <br>
+    {{request.user.username}}
+    <a href="{% url 'account_logout' %}">Logout</a>
+
+      
+    {% endif %}
+    </h1>
 </body>
 </html>
